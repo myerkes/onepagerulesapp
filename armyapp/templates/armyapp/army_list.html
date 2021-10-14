@@ -1,0 +1,11 @@
+{% extends './base.html' %}
+
+{% block content %}
+
+    {% for army in army_list %}
+        <h1>{{ army.name }}</h1>
+        <a>{{ army.name }}</a>
+
+    {% endfor %}
+
+{% endblock %}

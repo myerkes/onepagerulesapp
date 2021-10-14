@@ -1,0 +1,11 @@
+{% extends './base.html' %}
+
+{% block content %}
+    <h1>welcome to the One Page Rules companion app!</h1>
+
+    {% for unit in unit_list %}
+        <h1>{{ unit.name }} ({{ unit.size}})</h1>
+
+    {% endfor %}
+
+{% endblock %}
