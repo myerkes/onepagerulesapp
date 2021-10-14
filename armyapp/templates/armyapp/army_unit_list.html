@@ -1,0 +1,11 @@
+{% extends './base.html' %}
+
+{% block content %}
+    <h1>{{ army }}</h1>
+
+    {% for unit in unit_list %}
+        <h2>{{ unit.name }} ({{ unit.size}})</h2>
+
+    {% endfor %}
+
+{% endblock %}

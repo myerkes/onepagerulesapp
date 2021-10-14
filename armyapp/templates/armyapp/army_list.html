@@ -4,7 +4,7 @@
 
     {% for army in army_list %}
         <h1>{{ army.name }}</h1>
-        <a>{{ army.name }}</a>
+        <a href="{% url 'armyapp:armyunitlist' army.id %}">{{ army.name }}</a>
 
     {% endfor %}
 

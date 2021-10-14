@@ -59,7 +59,7 @@ class SpecialRuleUnitJoin(models.Model):
 class Army(models.Model):
     name = models.CharField(max_length=255)
     background = models.CharField(max_length=1000)
-    units = models.ManyToManyField(Unit, blank=True)
+    units = models.ManyToManyField(Unit, blank=True, related_name='units')
     specialrules = models.ManyToManyField(SpecialRule, blank=True)
     pyschicspells = models.ManyToManyField(PsychicSpell, blank=True)
 

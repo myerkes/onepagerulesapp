@@ -27,8 +27,14 @@ class ArmyListview(ListView):
 
 class ArmyUnitListView(ListView):
     model = Unit
+    template_name = 'armyapp/army_unit_list.html'
+
+    def get_queryset(self):
+        army = get_object_or_404(Army, pk=self.kwargs['army_pk'])
+        return army.units.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        units = Unit.objects.filter(Army=self.kwargs['army_pk'])
+        army = get_object_or_404(Army, pk=self.kwargs['army_pk'])
+        context['army'] = army
         return context
